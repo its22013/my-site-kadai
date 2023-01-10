@@ -1,1 +1,1 @@
-# next-reacrt-website
+# next-react-website
