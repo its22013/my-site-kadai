@@ -10,7 +10,7 @@
  
  /* タイポグラフィ　（フォントサイズ）*/
  --body: clamp(1rem, 0.95rem + 0.2vw, 1.125rem); /* 16-18px */
- --display: clamp(4.5rem, 1.83rem + 1.134vw, 10rem); /* 72-160 */
+ --display: clamp(4.5rem, 1.83rem + 11.34vw, 10rem); /* 72-160 */
  --heading1: clamp(2rem, 1.3rem + 3vw, 4rem); /* 32-64px */
  --heading2: clac(var(--body) * 1.5); /* 24-27 */
  --heading3: clac(var(--body) * 1.2); /* 19.2-21.6 */
@@ -43,6 +43,11 @@ h2 {
 
 h3 {
   font-size: var(--heading3);
+}
+
+/* next/image */
+span > img {
+    transition: 0.2s;
 }
 
  /* リセット */
