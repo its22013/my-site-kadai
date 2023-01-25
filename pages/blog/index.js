@@ -1,10 +1,12 @@
+import Meta from 'components/meta'
 import Container from 'components/container'
 import Hero from 'components/hero'
 
-export default function Blog() {
+export default function Blog () {
   return (
-    <Container>	  
-      <Hero title="Blog" subtitle="Recent Posts" />
+    <Container>
+      <Meta pageTitle='ブログ' pageDesc='ブログ一覧' />
+      <Hero title='Blog' subtitle='Recent Posts' />
     </Container>
-   )
+  )
 }
