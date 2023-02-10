@@ -5,11 +5,15 @@ import Meta from 'components/meta'
 import Container from 'components/container'
 import PostHeader from 'components/post-header'
 import PostBody from 'components/post-body'
-import { TwoColumn, TwoColumnMain, TwoColumnSidebar } from 'components/two-column'
+import {
+  TwoColumn,
+  TwoColumnMain,
+  TwoColumnSidebar
+} from 'components/two-column'
 import ConvertBody from 'components/convert-body'
 import PostCategories from 'components/post-categories'
 import Pagination from 'components/pagination'
-import Image from "next/legacy/image";
+import Image from 'next/image'
 import { getPlaiceholder } from 'plaiceholder'
 
 // ローカルの代替アイキャッチ画像
@@ -34,6 +38,7 @@ export default function Post ({
         pageImgW={eyecatch.width}
         pageImgH={eyecatch.height}
       />
+
       <article>
         <PostHeader title={title} subtitle='Blog Article' publish={publish} />
 
@@ -51,6 +56,7 @@ export default function Post ({
             blurDataURL={eyecatch.blurDataURL}
           />
         </figure>
+
         <TwoColumn>
           <TwoColumnMain>
             <PostBody>
@@ -66,10 +72,8 @@ export default function Post ({
           prevText={prevPost.title}
           prevUrl={`/blog/${prevPost.slug}`}
           nextText={nextPost.title}
-          nextUrl='/blog/$nextPost.slug'
+          nextUrl={`/blog/${nextPost.slug}`}
         />
-        <div>{prevPost.title} {prevPost.slug}</div>
-        <div>{nextPost.title} {nextPost.slug}</div>
       </article>
     </Container>
   )
@@ -77,6 +81,7 @@ export default function Post ({
 
 export async function getStaticPaths () {
   const allSlugs = await getAllSlugs()
+
   return {
     paths: allSlugs.map(({ slug }) => `/blog/${slug}`),
     fallback: false
